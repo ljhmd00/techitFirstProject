@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>searchFood</title>
@@ -12,13 +12,43 @@
 <body>
     <img class="bgImg" src="/images/foodBg.png" alt="foodBg">
     <main>
-        <div class="time">time</div>
-        <div class="search">
-            <input class="searchInput" type="text" placeholder="chatGPT에게 맛집을 물어보세요.">
-            <button class="searchButton">검색</button>
+        <div class="intro">
+            <h1 class="text"></h1>
         </div>
+        <div class="time">time</div>
+        <img id="gpt" src="./images/gpt.png" alt="gpt icon">
+        <div class="search">
+            <input class="searchInput" type="text" placeholder="chatGPT 검색하기">
+            <button class="searchButton" onclick="onClickSearch()">검색</button>
+        </div>
+        <div class="searchResult"></div>
+        <div class="mapTitle">지도로 검색해보세요!</div>
+        <div class="map_wrap">
+            <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+            <div id="menu_wrap" class="bg_white">
+                <div class="option">
+                    <div>
+                        <form onsubmit="searchPlaces(); return false;">
+                            키워드 : <input type="text" value="멋쟁이사자처럼" id="keyword" size="15">
+                            <button type="submit">검색하기</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
+            </div>
+        </div>
+
+
+
     </main>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b9efa3acfabe8398fdb32cc0a6639231&libraries=services
+"></script>
 <script src="main.js"></script>
+<script src="map.js"></script>
 
 </html>

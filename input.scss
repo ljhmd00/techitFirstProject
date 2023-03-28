@@ -1,9 +1,18 @@
 $mainColor: #ff9900;
 $subColor: #e32934;
+@import "map";
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 body {
     margin: 0;
-
     .bgImg {
         margin: 10px;
         position: fixed;
@@ -14,7 +23,7 @@ body {
     }
 
     main {
-        position: fixed;
+        position: relative;
         z-index: 2;
         width: 100vw;
         height: 100%;
@@ -23,19 +32,39 @@ body {
         align-items: center;
         min-width: 768px;
 
+        .intro {
+            margin-top: 120px;
+            .text {
+                -webkit-text-stroke: 1px white;
+                color: $mainColor;
+                font-size: 48px;
+                font-weight: bold;
+                display: inline;
+                vertical-align: middle;
+                border-right: 0.05em solid $subColor;
+                animation: cursor 0.2s ease infinite;
+            }
+        }
+
         .time {
             text-align: center;
             width: 400px;
             height: 30px;
             -webkit-text-stroke: 2px $mainColor;
             color: white;
-            font-size: 78px;
+            font-size: 98px;
             font-weight: 600;
-            margin-top: 10%;
+            margin-top: 5%;
+        }
+
+        #gpt {
+            width: 48px;
+            margin-top: 100px;
+            animation: spin 10s linear infinite;
         }
 
         .search {
-            margin-top: 100px;
+            margin-top: 20px;
 
             .searchInput {
                 background-color: white;
@@ -55,9 +84,39 @@ body {
                 cursor: pointer;
             }
         }
-    }
-    footer {
-        height: 100px;
-        background-color: $subColor;
+
+        .searchResult {
+            display: none;
+            width: 600px;
+            background-color: $mainColor;
+            color: white;
+            padding: 8px 3px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .mapTitle {
+            display: none;
+            width: 600px;
+            background-color: $subColor;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 5px 2px;
+            margin-top: 8px;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .map_wrap {
+            display: none;
+            margin-bottom: 5%;
+            #map {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border: 1px solid $subColor;
+            }
+        }
     }
 }
