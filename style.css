@@ -294,5 +294,57 @@ body main .map_wrap #map {
   border-bottom-right-radius: 10px;
   border: 1px solid #e32934;
 }
+body main .nft {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 24px;
+}
+body main .nft img {
+  width: 256px;
+  height: 256px;
+}
+body main .nft .nftHover {
+  position: absolute;
+  display: none;
+  width: 256px;
+  height: 256px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+body main .nft .nftHover a {
+  color: white;
+}
+body main .nft .nftHover button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -8px;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  cursor: pointer;
+}
+body main .nft:hover .nftHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .nftView {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  border: 1px solid #e32934;
+  background-color: #e32934;
+  color: white;
+  padding: 3px 8px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */
